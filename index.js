@@ -19,8 +19,13 @@ Aşağıdakileri yapın:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
-
-
+let surucuYasi = 19;
+if(surucuYasi >18 ) {
+  console.log('True');
+}
+else {
+  console.log('False');
+}
 
 /*
 Görev 1b - Değerler (puanlamaya dahil değildir)
@@ -33,8 +38,13 @@ Aşağıdakileri yapınız:
 
    İPUCU: fonksiyon oluşturmaya gerek yok
 */
+let birinciDeger = 12;
+let ikinciDegeri = 15;
 
-
+if (birinciDeger < ikinciDegeri) {
+  birinciDeger = 15;
+}
+  console.log(birinciDeger);
 
 
 
@@ -49,6 +59,10 @@ Aşağıdakileri yapın:
    İPUCU: Number metoduna bakabilirsin
 */
 
+let str = "1999";
+let str_to_number = Number(str);
+console.log(str_to_number);
+
 
 
 
@@ -60,11 +74,12 @@ Aşağıdakileri yapın:
    2. Aşağıdaki çarpma fonksiyonunu çağırarak, 2 sayıyı bu fonksiyona iletin
    3. a ve b'yi çarpıp, sonucu dönün
 */
-
-function carpma(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
-}
-
+console.clear();
+function carpma(a, b){
+  return a * b;
+  }
+  
+//console.log(carpma(2,4));
 
 
 
@@ -76,11 +91,12 @@ Aşağıdakileri yapın:
  2. Gelen değeri kullanarak köpeğin yaşını hesaplayın (insanlarda 1 yıl köpeklerde 7 yıla denk gelir)
  3. Hesaplanan köpeğin yaşını dönün.
  */
-
-function kopeginYasi(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+console.clear();
+function kopeginYasi(yas){
+  let hesaplananYas = yas*7;
+  return hesaplananYas;
 }
-
+console.log(kopeginYasi(5));
 
 
 /* Görev 3 */
@@ -104,8 +120,45 @@ Aşağıdakileri oyun isimli fonksiyonu kullanarak yapın.
 OYUNUN KURALLARI: Makas Kağıdı yener| Kağıt Taşı yener | Taş Makas'ı yener | veya beraberlik olur.
 */
 
+
+function secim (sayi){
+  if (sayi === 0) {
+    return('Taş')
+  }
+  if (sayi === 1){
+    return('Kağıt')
+  }
+  if (sayi == 2){
+    return('Makas')
+  }
+}
+
+let oyuncu = secim(0);
+let bilgisayar = secim(Math.floor(Math.random() * 3));
 function oyun(oyuncu, bilgisayar){
-  /*buraya kodunu yazabilirsin*/
+
+  if (oyuncu === 'Taş' && bilgisayar === 'Kağıt') {
+    return ('Kaybettin!')
+  }
+  if (oyuncu === 'Kağıt' && bilgisayar === 'Makas'){
+    return ('Kaybettin!')
+  }
+  if (oyuncu === 'Makas' && bilgisayar === 'Taş'){
+    return ('Kaybettin!')
+  }
+  if (oyuncu === 'Kağıt' && bilgisayar === 'Taş') {
+    return ('Kazandın!')
+  }
+  if (oyuncu === 'Makas' && bilgisayar === 'Kağıt'){
+    return ('Kazandın!')
+  }
+  if (oyuncu === 'Taş' && bilgisayar === 'Makas'){
+    return ('Kazandın!')
+  }
+  if (oyuncu === bilgisayar) {
+    return ('Beraberlik')
+  }
+   
 }
 
 
@@ -120,10 +173,11 @@ Aşağdakileri milDonusturucu fonksiyonunu kullanarak yapın:
 3. Mil değerini geri dönün
 */
 
-function milDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function milDonusturucu(km){
+  let hesaplana = km * 0.6214;
+return km*0.621371;
 }
-
+console.log(milDonusturucu(10));
 
 
 //Görev 4b - Santimetreden Feet
@@ -134,10 +188,10 @@ Aşağıdakileri feetDonusturucu fonsiyonunu kullanarak yapın:
 3. feet değerini geri dönün
 */
 
-function feetDonusturucu(/*buraya kodunu yazabilirsin*/){
-  /*buraya kodunu yazabilirsin*/
+function feetDonusturucu(cm){
+  return cm / 30.48;
 }
-
+console.log(feetDonusturucu(100));
 
 
 /* Görev 5 : 5 küçük maymun yatakta zıplamış şarkısını çocuklar için hazırladığımızı varsayalım. https://www.youtube.com/watch?v=e4EJ34xnlxk */
@@ -153,11 +207,13 @@ Aşağıdakileri cocukSarkisi fonksiyonunda yapın:
 4. Bu döngüde, her seferinde cocukSarkisi fonsiyonu çalışsın ve console.log'a dönen metni yazdırsın.
 */
 
-function cocukSarkisi(/*buraya kodunu yazabilirsin*/){
-      /*buraya kodunu yazabilirsin*/
+function cocukSarkisi(sayi){
+      let metin = sayi + " küçük maymun yatakta zıplamış, biri düşüp başını çarpmış, Anne doktoru aramış, Doktor çok kızmış: Bir daha yatakta zıplamak yok!";
+      return metin;
 }
-
-
+for(let i=10; i>0; i--) {
+console.log(cocukSarkisi(i));
+}
 /* Görev 6 : Not Hesaplayıcı */
 
 /*
@@ -173,10 +229,24 @@ Aşağdakileri notHesapla fonksiyonunda yapın.
  dönün
 */
 
-function notHesapla(/*buraya kodunu yazabilirsin*/){
-/*buraya kodunu yazabilirsin*/
+function notHesapla(not){
+if(not >= 90){
+  return 'A aldın';
 }
-
+  else if (not >=80) {
+    return 'B aldın';
+  }
+  else  if (not >=70) {
+    return 'C aldın';
+  }
+  else  if (not >=60) {
+  return 'D aldın';
+  }
+  else {
+    return 'F aldın';
+    }
+}
+console.log(notHesapla(90));
 
 
 /* Bonus Çalışma: Sesli harf sayacı - Kaç tane sesli harf var? */
